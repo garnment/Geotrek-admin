@@ -1227,13 +1227,13 @@ class SyncRandoViewTest(TestCase):
         test if sync can be launched by superuser post
         """
         self.client.login(username='admin', password='super')
-        response = self.client.post(reverse('trekking:sync_randos'), data={})
-        self.assertEqual(response.status_code, 302)
+        response = self.client.post(reverse('trekking:sync_randos'), data={}, follow=True)
+        self.assertEqual(response.status_code, 200, response.redirect_chain)
 
     def test_get_sync_simpleuser(self):
         self.client.login(username='homer', password='doooh')
         response = self.client.get(reverse('trekking:sync_randos_view'))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
     def test_post_sync_simpleuser(self):
         """
