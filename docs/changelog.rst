@@ -2,7 +2,20 @@
 CHANGELOG
 =========
 
-2.20.2.dev0
+2.21.1.dev0
+-------------------
+
+**Bug fixes**
+
+- Fix crash in log entries view
+
+**Minor changes**
+
+- Save column sort by module
+- Rename SITRA to APIDAE
+
+
+2.21.0 (2018-09-04)
 -------------------
 
 **New features**
